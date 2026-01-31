@@ -1,0 +1,41 @@
+import axios from 'axios';
+import { useAuthStore } from '../store/authStore';
+
+// ✅ Khi development, dùng /api và Vite proxy sẽ forward tới backend
+// Khi production, thay đổi BASE_URL sang domain thực
+const API_BASE_URL = '/api';
+
+// ✅ Axios client riêng dành cho Cart - có withCredentials để gửi/nhận cookies
+const cartAxiosClient = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  withCredentials: true, // Cho phép gửi/nhận cookies
+});
+
+// Request interceptor
+cartAxiosClient.interceptors.request.use(
+  (config) => {
+    const token = useAuthStore.getState().token;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+// Response interceptor
+cartAxiosClient.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      useAuthStore.getState().logout();
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default cartAxiosClient;
