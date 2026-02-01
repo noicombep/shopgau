@@ -7,6 +7,9 @@ import { ProductDetailPage } from '../pages/ProductDetail';
 import { CartPage } from '../pages/Cart';
 import { ProtectedRoute, AdminRoute, PublicRoute } from '../middleware/ProtectedRoute';
 import Checkout from "../pages/Checkout";
+import OrderHistory from "../pages/OrderHistory";
+import PaymentSuccess from '../pages/PaymentSuccess';
+import PaymentCancel from '../pages/PaymentCancel';
 
 export function AppRoutes() {
   return (
@@ -31,12 +34,15 @@ export function AppRoutes() {
           </PublicRoute>
         }
       />
+<Route path="/payment-success" element={<PaymentSuccess />} />
+<Route path="/payment-cancel" element={<PaymentCancel />} />
 
       {/* Protected Routes (coming soon) */}
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/products/:id" element={<ProductDetailPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/checkout" element={<Checkout />} /> 
+      <Route path="/order" element={<OrderHistory />} />
       {/* <Route
         path="/orders"
         element={
