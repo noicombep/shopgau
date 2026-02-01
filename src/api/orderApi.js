@@ -1,7 +1,7 @@
-import orderAxiosClient from "../utils/orderAxiosClient"; 
+import cartAxiosClient from "../utils/cartAxiosClient"; 
 
 export const orderApi = {
-  createOrder: (data) => orderAxiosClient.post("/order", data),
-  getMyOrders: () => orderAxiosClient.get("/order/my-orders"),
-    checkPayment: (orderId) => orderAxiosClient.get(`/order/check-payment/${orderId}`)
+  createOrder: (data) => cartAxiosClient.post("/order", data),
+  getMyOrders: () => cartAxiosClient.get("/order/my-orders"),
+    checkPayment: (orderId) => cartAxiosClient.get(`/order/check-payment/${orderId}`)
 };
