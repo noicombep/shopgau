@@ -7,9 +7,7 @@ const API_BASE_URL = 'https://cuddleshop-c7g8e3exb6eqa8dq.southeastasia-01.azure
 
 const axiosClient = axios.create({
   baseURL: API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+
 });
 
 // Request interceptor

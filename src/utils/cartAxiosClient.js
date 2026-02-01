@@ -8,9 +8,7 @@ const API_BASE_URL = 'https://cuddleshop-c7g8e3exb6eqa8dq.southeastasia-01.azure
 // ✅ Axios client riêng dành cho Cart - có withCredentials để gửi/nhận cookies
 const cartAxiosClient = axios.create({
   baseURL: API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+
   withCredentials: true, // Cho phép gửi/nhận cookies
 });
 
