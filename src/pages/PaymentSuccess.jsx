@@ -21,7 +21,7 @@ export default function PaymentSuccess() {
           setStatus("Thanh toán thành công!");
           clearCart();
           // Tự động chuyển sang trang orders sau 2s
-          setTimeout(() => navigate("/order"), 2000);
+          setTimeout(() => navigate("/order"), 10000);
         } else {
           setStatus("Chưa thanh toán, vui lòng chờ hoặc thử lại.");
         }
