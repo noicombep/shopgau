@@ -1,4 +1,5 @@
 import axiosClient from '../utils/axiosClient';
+const API_BASE_URL = 'https://cuddleshop-c7g8e3exb6eqa8dq.southeastasia-01.azurewebsites.net/api';
 
 export const authAPI = {
   login: async (email, password) => {
@@ -32,7 +33,7 @@ export const productAPI = {
     
   return response.data.map(p => ({
     ...p,
-    imageUrl: `${API_BASE}/${p.imagePath}`
+    imageUrl: `${API_BASE_URL}/${p.imagePath}`
   }));
     return response.data;
   },
