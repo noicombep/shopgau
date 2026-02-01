@@ -29,6 +29,11 @@ export const authAPI = {
 export const productAPI = {
   getAll: async (params = {}) => {
     const response = await axiosClient.get('/products', { params });
+    
+  return response.data.map(p => ({
+    ...p,
+    imageUrl: `${API_BASE}/${p.imagePath}`
+  }));
     return response.data;
   },
 
