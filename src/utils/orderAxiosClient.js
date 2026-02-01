@@ -11,3 +11,4 @@ export const checkout = async (orderData) => {
   const response = await orderAxiosClient.post('/order', orderData);
   return response.data;
 };
+export default orderAxiosClient;
