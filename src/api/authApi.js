@@ -1,5 +1,5 @@
 import axiosClient from '../utils/axiosClient';
-const API_BASE_URL = 'https://cuddleshop-c7g8e3exb6eqa8dq.southeastasia-01.azurewebsites.net/api';
+import { buildImageUrl } from '../utils/imageHelper';
 
 export const authAPI = {
   login: async (email, password) => {
@@ -31,16 +31,18 @@ export const productAPI = {
   getAll: async (params = {}) => {
     const response = await axiosClient.get('/products', { params });
     
-  return response.data.map(p => ({
-    ...p,
-    imageUrl: `${API_BASE_URL}/${p.imageUrl}`,
-  }));
-    return response.data;
+    return response.data.map(p => ({
+      ...p,
+      imageUrl: buildImageUrl(p.imageUrl),
+    }));
   },
 
   getById: async (id) => {
     const response = await axiosClient.get(`/products/${id}`);
-    return response.data;
+    return {
+      ...response.data,
+      imageUrl: buildImageUrl(response.data.imageUrl),
+    };
   },
 
   create: async (data) => {
