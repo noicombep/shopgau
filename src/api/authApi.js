@@ -33,7 +33,7 @@ export const productAPI = {
     
   return response.data.map(p => ({
     ...p,
-    imageUrl: `${API_BASE_URL}/${p.imagePath}`
+    imageUrl: `${API_BASE_URL}/${p.imageUrl}`,
   }));
     return response.data;
   },
