@@ -48,10 +48,10 @@ export function HomePage() {
   {/* Text Content */}
   <div className="relative text-center px-4 max-w-3xl">
     <h1 className="text-5xl font-bold mb-4 drop-shadow-lg">
-      Welcome to CuddleBear 🧸
+      Welcome to MemoSoft 🧸
     </h1>
     <p className="text-xl text-white/90 mb-8 drop-shadow-md">
-      Discover the coziest teddy bears and cuddle buddies
+      Discover the coziest teddy bears 
     </p>
     <Link
       to="/products"
