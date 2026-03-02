@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const orderAxiosClient = axios.create({
-  baseURL: 'http://172.188.1.164/api',
+  baseURL: 'http://noicombep.southeastasia.cloudapp.azure.com/api',
   withCredentials: true, // gửi cookie
 });
 

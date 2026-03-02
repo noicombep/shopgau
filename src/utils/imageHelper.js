@@ -1,4 +1,4 @@
-const API_HOST ='https://cuddleshop-c7g8e3exb6eqa8dq.southeastasia-01.azurewebsites.net/';
+const API_HOST ='http://noicombep.southeastasia.cloudapp.azure.com/';
 
 export const buildImageUrl = (path) => {
   if (!path) return "/no-image.png";
