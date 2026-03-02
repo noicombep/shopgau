@@ -1,4 +1,4 @@
-const API_HOST ='https://api.shopgau.store/';
+const API_HOST ='https://api.shopgau.store';
 
 export const buildImageUrl = (path) => {
   if (!path) return "/no-image.png";
