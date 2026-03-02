@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const orderAxiosClient = axios.create({
-  baseURL: 'https://cuddleshop-c7g8e3exb6eqa8dq.southeastasia-01.azurewebsites.net/api',
+  baseURL: 'http://172.188.1.164/api',
   withCredentials: true, // gửi cookie
 });
 

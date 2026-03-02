@@ -1,4 +1,5 @@
 import cartAxiosClient from '../utils/cartAxiosClient';
+import { buildImageUrl } from '../utils/imageHelper';
 
 export const cartAPI = {
   // Lấy danh sách items trong cart
