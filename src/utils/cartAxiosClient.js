@@ -3,7 +3,7 @@ import { useAuthStore } from '../store/authStore';
 
 // ✅ Khi development, dùng /api và Vite proxy sẽ forward tới backend
 // Khi production, thay đổi BASE_URL sang domain thực
-const API_BASE_URL = 'http://noicombep.southeastasia.cloudapp.azure.com/api';
+const API_BASE_URL = 'https://api.shopgau.store/api';
 
 // ✅ Axios client riêng dành cho Cart - có withCredentials để gửi/nhận cookies
 const cartAxiosClient = axios.create({

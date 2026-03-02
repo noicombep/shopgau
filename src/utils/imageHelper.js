@@ -1,4 +1,4 @@
-const API_HOST ='http://noicombep.southeastasia.cloudapp.azure.com/';
+const API_HOST ='https://api.shopgau.store/';
 
 export const buildImageUrl = (path) => {
   if (!path) return "/no-image.png";

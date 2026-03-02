@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const orderAxiosClient = axios.create({
-  baseURL: 'http://noicombep.southeastasia.cloudapp.azure.com/api',
+  baseURL: 'https://api.shopgau.store/api',
   withCredentials: true, // gửi cookie
 });
 
