@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AdminLayout from "../components/AdminLayout";
 import { adminApi } from "../../api/adminApi";
-
+import { buildImageUrl } from "../../utils/imageHelper";
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -206,7 +206,7 @@ export default function Products() {
                 <td className="p-4">
                   {product.imageUrl && (
                     <img
-                      src={`https://localhost:7131${product.imageUrl}`}
+                      src={buildImageUrl(product.imageUrl)}
                       className="w-16 h-16 object-cover rounded"
                     />
                   )}
