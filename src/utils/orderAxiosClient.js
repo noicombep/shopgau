@@ -1,7 +1,8 @@
 import axios from 'axios';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const orderAxiosClient = axios.create({
-  baseURL: 'https://api.shopgau.store/api',
+  baseURL: API_BASE_URL,
   withCredentials: true, // gửi cookie
 });
 

@@ -10,7 +10,12 @@ import Checkout from "../pages/Checkout";
 import OrderHistory from "../pages/OrderHistory";
 import PaymentSuccess from '../pages/PaymentSuccess';
 import PaymentCancel from '../pages/PaymentCancel';
-
+import Dashboard from '../admin/pages/Dashboard';
+import Products from '../admin/pages/Products';
+import Orders from '../admin/pages/Orders';
+import Users from '../admin/pages/Users';
+import Categories from '../admin/pages/Categories';
+import OrderDetails from '../admin/pages/OrderDetails';
 export function AppRoutes() {
   return (
     <Routes>
@@ -52,15 +57,65 @@ export function AppRoutes() {
         }
       /> */}
 
-      {/* Admin Routes (coming soon) */}
-      {/* <Route
+      {/* Admin Routes */}
+      <Route
+        path="/admin/dashboard"
+        element={
+          <AdminRoute>
+            <Dashboard />
+          </AdminRoute>
+        }
+      />
+      
+      <Route
+        path="/admin/products"
+        element={
+          <AdminRoute>
+            <Products />
+          </AdminRoute>
+        }
+      />
+      <Route
+        path="/admin/orders"
+        element={
+          <AdminRoute>
+            <Orders />
+          </AdminRoute>
+        }
+      />
+      <Route
+        path="/admin/orders/:id"
+        element={
+          <AdminRoute>
+            <OrderDetails />
+          </AdminRoute>
+        }
+      />
+
+      <Route
+        path="/admin/users"
+        element={
+          <AdminRoute>
+            <Users />
+          </AdminRoute>
+        }
+      />
+      <Route
+        path="/admin/categories"
+        element={
+          <AdminRoute>
+            <Categories />
+          </AdminRoute>
+        }
+      />
+      <Route
         path="/admin"
         element={
           <AdminRoute>
-            <AdminDashboard />
+            <Dashboard />
           </AdminRoute>
         }
-      /> */}
+      />
     </Routes>
   );
 }
